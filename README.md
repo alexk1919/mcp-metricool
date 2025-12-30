@@ -42,88 +42,103 @@ Paste this template in the file and replace <METRICOOL_USER_TOKEN> and <METRICOO
 ```
 
 ## Tools
-The server implements several tools to interact with the Metricool API:
+The server implements 28 tools to interact with the Metricool API:
 
+### Brand Management
 1. `get_brands()`
-   - Get the list of brands from your Metricool account. Simplified tool for auxiliar usage in other tools.
+   - Get simplified list of brands from your Metricool account. Used as auxiliary data for other tools.
 
 2. `get_brands_complete()`
-   - Get the list of brands from your Metricool account with all the available information for each brand.
+   - Get complete brand information including all available details for each brand.
+
+### Content Analytics
 
 3. `get_instagram_reels(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Instagram Reels from your Metricool account.
+   - Get Instagram Reels analytics from your Metricool account.
 
 4. `get_instagram_posts(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Instagram Posts from your Metricool account.
+   - Get Instagram Posts analytics from your Metricool account.
 
 5. `get_instagram_stories(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Instagram Stories from your Metricool account.
+   - Get Instagram Stories analytics from your Metricool account.
 
 6. `get_tiktok_videos(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Tiktok Videos from your Metricool account.
+   - Get TikTok Videos analytics from your Metricool account.
 
 7. `get_facebook_reels(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Facebook Reels from your Metricool account.
+   - Get Facebook Reels analytics from your Metricool account.
 
 8. `get_facebook_posts(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Facebook Posts from your Metricool brand account.
+   - Get Facebook Posts analytics from your Metricool brand account.
 
 9. `get_facebook_stories(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Facebook Stories from your Metricool brand account.
+   - Get Facebook Stories analytics from your Metricool brand account.
 
 10. `get_thread_posts(init_date: str, end_date: str, blog_id: int)`
-   - Get the list of Threads Posts from your Metricool brand account.
+    - Get Threads Posts analytics from your Metricool brand account.
 
 11. `get_x_posts(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of X (Twitter) Posts from your Metricool account.
+    - Get X (Twitter) Posts analytics from your Metricool account.
 
 12. `get_bluesky_posts(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Bluesky Posts from your Metricool brand account.
+    - Get Bluesky Posts analytics from your Metricool brand account.
 
 13. `get_linkedin_posts(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Linkedin Posts from your Metricool brand account.
+    - Get LinkedIn Posts analytics from your Metricool brand account.
 
 14. `get_pinterest_pins(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Pinterest Pins from your Metricool brand account.
+    - Get Pinterest Pins analytics from your Metricool brand account.
 
 15. `get_youtube_videos(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Youtube Videos from your Metricool brand account.
+    - Get YouTube Videos analytics from your Metricool brand account.
 
 16. `get_twitch_videos(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Twitch Videos from your Metricool account.
+    - Get Twitch Videos analytics from your Metricool account.
+
+### Ads Campaigns
 
 17. `get_facebookads_campaigns(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Facebook Ads Campaigns from your Metricool account.
+    - Get Facebook Ads Campaigns from your Metricool account.
 
 18. `get_googleads_campaigns(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Google Ads Campaigns from your Metricool account.
+    - Get Google Ads Campaigns from your Metricool account.
 
 19. `get_tiktokads_campaigns(init_date: str, end_date: str, blog_id: int)`
-    - Get the list of Tiktok Ads Campaigns from your Metricool brand account.
+    - Get TikTok Ads Campaigns from your Metricool brand account.
 
-20. `get_network_competitors`
-    - Get the list of competitors from your Metricool brand account (Instagram, Facebook, X, Bluesky, Youtube and Twitch).
+### Competitor Analysis
 
-21. `get_network_competitors_posts`
-    - Get and analyze the posts of competitors from your Metricool brand account (Instagram, Facebook, X, Bluesky, Youtube and Twitch).
-    
-22. `post_schedule_post`
-    - Schedule a post (o multipost) to your brands in Metricool
+20. `get_network_competitors(network: str, init_date: str, end_date: str, blog_id: int, limit: int, timezone: str)`
+    - Get competitor analytics from your Metricool brand account.
+    - Supported networks: Instagram, Facebook, X, Bluesky, YouTube, Twitch.
 
-23. `get_scheduled_posts`
-    - Get the scheduled posts from your Metricool brand account.
+21. `get_network_competitors_posts(network: str, init_date: str, end_date: str, blog_id: int, limit: int, timezone: str)`
+    - Get and analyze competitor posts from your Metricool brand account.
+    - Supported networks: Instagram, Facebook, X, Bluesky, YouTube, Twitch.
 
-24. `get_best_time_to_post`
-    - Get the best time to post for a specific social network. Return days and hours with the value. Higher value better hour/day to post
+### Scheduling
 
-25. `update_schedule_post`
-    - Update the scheduled post in the same conversation or a previously scheduled post.
+22. `post_schedule_post(date: str, blog_id: int, info: json)`
+    - Schedule a post (or multipost) to your brands in Metricool.
 
-26. `get_metrics`
-    - Get the available metrics to obtain analysis from a specific social network.
+23. `get_scheduled_posts(blog_id: int, start: str, end: str, timezone: str, extendedRange: bool)`
+    - Get scheduled posts from your Metricool brand account.
 
-27. `get_analytics`
-    - Get the analytics from a specific social network of your Metricool brand account.
+24. `get_best_time_to_post(start: str, end: str, blog_id: int, provider: str, timezone: str)`
+    - Get the best time to post for a specific social network. Returns days and hours with engagement values.
 
-28. `get_pinterest_boards`
+25. `update_schedule_post(id: str, date: str, blog_id: int, info: dict)`
+    - Update a scheduled post from a previous conversation or existing schedule.
+
+### Analytics & Metrics
+
+26. `get_metrics(network: str)`
+    - Get available metrics for analysis from a specific social network.
+
+27. `get_analytics(blog_id: int, start: str, end: str, timezone: str, network: str, metric: list[str])`
+    - Get analytics data from a specific social network for your Metricool brand account.
+
+### Pinterest
+
+28. `get_pinterest_boards(blog_id: int)`
     - Get Pinterest Boards from a specific Metricool brand account.
