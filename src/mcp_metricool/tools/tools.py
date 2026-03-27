@@ -478,7 +478,7 @@ async def get_pinterest_boards(blog_id: int) -> str | dict[str, Any]:
     return response
 
 @mcp.tool()
-async def post_schedule_post(date:str, blog_id: int, info: json) -> str | dict[str, Any]:
+async def post_schedule_post(date:str, blog_id: int, info: dict) -> str | dict[str, Any]:
     """
     Schedule a post to Metricool at a specific date and time.
     To be able to schedule the post, you need to maintain the structure.
