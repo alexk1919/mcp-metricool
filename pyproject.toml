@@ -1,6 +1,6 @@
 [project]
 name = "mcp-metricool"
-version = "1.1.9"
+version = "1.2.0"
 description = "This is a Model Context Protocol (MCP) server for interacting with the Metricool API. It allows AI agents to access and analyze social media metrics and campaign data from your Metricool account."
 readme = "README.md"
 authors = [
@@ -10,11 +10,15 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "build>=1.2.2.post1",
     "httpx>=0.28.1",
     "mcp[cli,http]>=1.6.0",
-    "twine>=6.1.0",
     "pytz>=2024.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
 ]
 
 [project.scripts]

@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Metricool",
+    "metricool",
+    "METRICOOL",
+    "facebookads",
+    "googleads",
+    "tiktokads",
+    "multipost",
+    "blogid",
+    "uvx",
+    "hatchling",
+    "httpx",
+    "pytz",
+    "Bluesky",
+    "carrousel",
+    "Vicent",
+    "Martí"
+  ],
+  "ignorePaths": [
+    "uv.lock",
+    "**/__pycache__/**",
+    ".git/**"
+  ]
+}

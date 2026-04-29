@@ -7,7 +7,7 @@ This is a Model Context Protocol (MCP) server for interacting with the Metricool
 ### Prerequisites
 MCP is still very new and evolving, we recommend following the [MCP documentation](https://modelcontextprotocol.io/quickstart#prerequisites) to get the MCP basics up and running.
 
-- Python 3.8 or higher
+- Python 3.12 or higher
 - [A Metricool account with API access (Advanced Tier)](https://metricool.com)
 - [Claude Desktop](https://claude.ai/) (or Cursor, or any MCP Client)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
